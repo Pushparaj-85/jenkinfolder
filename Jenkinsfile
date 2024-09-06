@@ -2,13 +2,13 @@ pipeline {
     agent any
     tools {nodejs "mynodejs"}
     stages {
-        stage('UAT') {
+        stage('Dev') {
             steps {
                 git credentialsId: 'webhookserver', url: 'https://github.com/Pushparaj-85/jenkinfolder.git'
-                sh '''echo "This is a new pipeline"
+                echo " file content is "
             }
         }
-        stage ('DEV') {
+        stage ('build') {
             steps {
             sh 'npm install'    
             }
