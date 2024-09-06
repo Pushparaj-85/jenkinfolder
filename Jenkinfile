@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    tools {nodejs "mynodejs"}
+    stages {
+        stage('UAT') {
+            steps {
+                git branch: 'dev', credentialsId: 'webhookserver', url: 'https://github.com/Pushparaj-85/gitdemo1.git'
+                sh '''echo "This is a new pipeline"
+                cat file3dev.txt'''
+            }
+        }
+        stage ('DEV') {
+            steps {
+            sh 'npm install'    
+            }
+        }
+    }
+}
