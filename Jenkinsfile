@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "mynodejs"}
     stages {
-        stage('Dev') {
+        stage('master') {
             steps {
                 git credentialsId: 'webhookserver', url: 'https://github.com/Pushparaj-85/jenkinfolder.git'
                 echo " file content is "
